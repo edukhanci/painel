@@ -5,7 +5,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Perfil do Usuário: 0</h1>
+    <h1>Perfil do Usuário: 1</h1>
     <div id="profile"></div>
     <br>	
     <button id="button-ok" onclick="getUserProfile()">Enviar</button>
@@ -17,29 +17,21 @@
     // URL da API
 	const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile';
 
-	// Fazendo a requisição GET usando Fetch
-	fetch(apiUrl, {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'application/json',			
-			'email': 'acassiasantosedukhan@gmail.com'
-			//'Authorization': 'Bearer SEU_TOKEN_DE_AUTENTICACAO' // Substitua pelo seu token de autenticação
-		}
-	})
-	.then(response => {
-		if (!response.ok) {
-			throw new Error('Erro ao acessar a API: ' + response.status);
-		}
-		return response.json();
-	})
-	.then(data => {
-		// Manipulando os dados recebidos da API
-		const profileDiv = document.getElementById('profile');
-		profileDiv.innerHTML = JSON.stringify(data, null, 2);
-	})
-	.catch(error => {
-		console.error('Erro:', error);
-	});
+fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao acessar a API: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Manipulando os dados recebidos da API
+        const dataDiv = document.getElementById('profile');
+        dataDiv.innerHTML = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
   
   
   /*
