@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Perfil do Usuário</h1>
+    <div id="profile"></div>
+    <br>	
+    <button id="button-ok" onclick="getUserProfile()">Enviar</button>
+  </body> 
+  
+  <script>
+  
+  
+    // URL da API
+	const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=acassiasantosedukhan@gmail.com';
+
+	// Fazendo a requisição GET usando Fetch
+	fetch(apiUrl, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+			//,
+			//'Authorization': 'Bearer SEU_TOKEN_DE_AUTENTICACAO' // Substitua pelo seu token de autenticação
+		}
+	})
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Erro ao acessar a API: ' + response.status);
+		}
+		return response.json();
+	})
+	.then(data => {
+		// Manipulando os dados recebidos da API
+		const profileDiv = document.getElementById('profile');
+		profileDiv.innerHTML = JSON.stringify(data, null, 2);
+	})
+	.catch(error => {
+		console.error('Erro:', error);
+	});
+  
+  
+  /*
+  
+	// URL da API
+	const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=acassiasantosedukhan@gmail.com';
+
+	// Fazendo a requisição GET usando Fetch
+	fetch(apiUrl)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Erro ao acessar a API: ' + response.status);
+			}
+			return response.json();
+		})
+		.then(data => {
+			// Manipulando os dados recebidos da API
+			const dataDiv = document.getElementById('data');
+			dataDiv.innerHTML = JSON.stringify(data, null, 2);
+		})
+		.catch(error => {
+			console.error('Erro:', error);
+		});  
+  */
+  
+  /*
+	async function getUserProfile() {
+	  // Monta a URL da API com o nome de usuário na query string
+	  //const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=${email}';
+	  const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=acassiasantosedukhan@gmail.com';
+
+	  try {
+		// Faz uma solicitação GET para a API
+		const response = await fetch(apiUrl);
+
+		// Verifica se a resposta foi bem-sucedida
+		if (!response.ok) {
+		  throw new Error(`Erro ao buscar o perfil do usuário: ${response.status}`);
+		}
+
+		// Converte a resposta para JSON
+		const userProfile = await response.json();
+
+		// Exibe ou retorna o JSON do perfil do usuário
+		console.log(userProfile);
+		return userProfile;
+
+	  } catch (error) {
+		console.error('Erro:', error);
+	  }
+	}	
+*/
+	
+  </script>  
+  
+</html>
