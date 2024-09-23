@@ -5,7 +5,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Perfil do Usuário: 4</h1>
+    <h1>Perfil do Usuário: 5</h1>
     <div id="profile"></div>
     <br>	
     <button id="button-ok" onclick="getUserProfile()">Enviar</button>
@@ -14,13 +14,36 @@
   <script>
   
   
-    // URL da API
-	const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=acassiasantosedukhan@gmail.com';
+// URL da API
+const apiUrl = 'https://www.khanacademy.org/api/internal/graphql/getFullUserProfile';
 
-await fetch("https://www.khanacademy.org/api/internal/graphql/projectsAuthoredByUser", {
-  "body": "{\"operationName\":\"projectsAuthoredByUser\",\"query\":\"query projectsAuthoredByUser($kaid: String, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {\\n  user(kaid: $kaid) {\\n    id\\n    programs(pageInfo: $pageInfo, sort: $sort) {\\n      complete\\n      cursor\\n      programs {\\n        id\\n        key\\n        authorKaid\\n        authorNickname\\n        displayableSpinoffCount\\n        imagePath\\n        sumVotesIncremented\\n        translatedTitle: title\\n        url\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"kaid\":\"kaid_585930138674289802884730\",\"sort\":\"TOP\",\"pageInfo\":{\"cursor\":\"\",\"itemsPerPage\":40}}}",
-  "method": "POST",
-}).then(res => res.json())
+// Dados a serem enviados
+const dataToSend = {
+    username: 'akassiasilvaedukhan'   
+};
+
+// Fazendo a requisição POST usando Fetch
+fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataToSend)
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Erro ao acessar a API: ' + response.status);
+    }
+    return response.json();
+})
+.then(data => {
+    // Manipulando os dados recebidos da API
+    const dataDiv = document.getElementById('profile');
+    dataDiv.innerHTML = JSON.stringify(data, null, 2);
+})
+.catch(error => {
+    console.error('Erro:', error);
+});	  
 	  
 	  /*
   fetch(apiUrl)
