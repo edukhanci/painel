@@ -5,7 +5,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Perfil do Usuário: 3</h1>
+    <h1>Perfil do Usuário: 4</h1>
     <div id="profile"></div>
     <br>	
     <button id="button-ok" onclick="getUserProfile()">Enviar</button>
@@ -16,7 +16,13 @@
   
     // URL da API
 	const apiUrl = 'https://www.khanacademy.org/api/internal/user/profile?email=acassiasantosedukhan@gmail.com';
+
+await fetch("https://www.khanacademy.org/api/internal/graphql/projectsAuthoredByUser", {
+  "body": "{\"operationName\":\"projectsAuthoredByUser\",\"query\":\"query projectsAuthoredByUser($kaid: String, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {\\n  user(kaid: $kaid) {\\n    id\\n    programs(pageInfo: $pageInfo, sort: $sort) {\\n      complete\\n      cursor\\n      programs {\\n        id\\n        key\\n        authorKaid\\n        authorNickname\\n        displayableSpinoffCount\\n        imagePath\\n        sumVotesIncremented\\n        translatedTitle: title\\n        url\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"kaid\":\"kaid_585930138674289802884730\",\"sort\":\"TOP\",\"pageInfo\":{\"cursor\":\"\",\"itemsPerPage\":40}}}",
+  "method": "POST",
+}).then(res => res.json())
 	  
+	  /*
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
@@ -30,7 +36,7 @@
       // trate erros de requisição
 	    console.log('erro');
     });
-	  
+	*/  
 	  /*
 fetch(apiUrl)
     .then(response => {
