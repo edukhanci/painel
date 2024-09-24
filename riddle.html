@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Riddle - Nível (-1)</title>
+    <link rel="stylesheet" href="./riddle.css" />
+</head>
+<body onload="loadLevel(0);">
+
+    <div class="image-container">
+        <h2 id="label-title">Nível (-1)</h1>
+        <img id="img-level" src="" alt="login">
+        <p id="label-tip">.</p>
+    </div>
+
+    <div id="input-container" class="input-container">
+        <input id="input-answer" type="text" placeholder="Resposta..." maxlength="8" onkeyup="onChangeAnsw()">
+        <button id="button-ok" onclick="testAns()">Enviar</button>
+    </div>
+
+    <div class="text-center">
+        <p id="label-char-remaining">Caracteres restantes: ?</p>
+        <p id="label-answ-format">Formato da resposta: ?</p>
+    </div>
+
+    <div id="comments-container">        
+    </div>    
+
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>

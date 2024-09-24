@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <!-- base href="https://gamificationapp.edu/" -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EduKids Gamificado</title>
+        
+        <script src="js/chart.js"></script>        
+        <link rel="stylesheet" href="home.css" />
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="calcifer" viewBox="0 0 100 100">
+                <path d="M50 10 C30 30 20 50 30 70 C40 90 60 90 70 70 C80 50 70 30 50 10" fill="#FF6600" />
+                <circle cx="40" cy="40" r="5" fill="white" />
+                <circle cx="60" cy="40" r="5" fill="white" />
+                <path d="M40 60 Q50 70 60 60" fill="none" stroke="white" stroke-width="3" />
+            </symbol>
+        </svg>
+    </head>
+
+
+
+<body>
+    <div class="container">
+        <div class="user-info">
+            <img id="user-photo" src="imgs/avatars/stelly-blue.svg" alt="Foto do usuário" class="user-photo">
+            <h2 id="user-name" class="user-name">João Silva</h2>
+            <p class="user-score">
+                <span class="animated-lightning">⚡</span> 
+                <span id="user-points">1250</span>
+                <br>
+                <span class="energy-points">pontos de energia</span>
+            </p>
+            <div class="streak-badge">
+              <img id="user-flame" src="imgs/flame_streak.png" alt="Flame" width="26px" height="32px">
+              13 dias seguidos
+            </div>
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th colspan="7">Setembro 2023</th>
+                    </tr>
+                    <tr>
+                        <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>4</td><td class="calendar-streak-background">5</td><td>6</td><td class="calendar-block-background">7</td><td>8</td><td>9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td><td class="highlighted-day"><strong>11</strong></td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="calendar-nav">
+                <a href="#" class="calendar-nav-link">« anterior</a>
+                <a href="#" class="calendar-nav-link">hoje</a>
+                <a href="#" class="calendar-nav-link">próximo »</a>
+            </div>
+            <br>
+        </div>
+
+        <div class="ranking">
+            <h2>Ranking</h2>
+            <ul id="ranking-list" class="ranking-list">
+            <!-- Aqui a lista de usuários é preenchida dinamicamente. -->
+            </ul>
+        </div>
+
+        <div id="prizes-list" class="prizes">
+            <h2>Prêmios Disponíveis</h2>
+            <!-- Aqui a lista de prêmios é preenchida dinamicamente. -->
+        </div>
+    </div>
+
+    <script src="./js/inherited.js"></script>
+</body></html>

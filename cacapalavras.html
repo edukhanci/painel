@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça-Palavras Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* - */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px; /* - */
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .word-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .word-list li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 40px);
+            grid-template-rows: repeat(9, 40px);
+            gap: 5px;
+        }
+
+        .grid div {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;            
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .grid .yellow {
+            background-color: yellow;
+        }
+
+        .grid .green {
+            background-color: green;
+            cursor: not-allowed;
+        }
+
+        .button-container { /* - */
+            text-align: center;
+        }
+        
+        .button-container button { /* - */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-container button:hover { /* - */
+            background-color: #45a049;
+        }        
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Coluna da esquerda com a lista de palavras -->
+        <div class="left-column">
+            <ul class="word-list">
+                <li id="word-list-0">Acesso</li>
+                <li id="word-list-1">Rampa</li>
+                <li id="word-list-2">Barra</li>
+                <li id="word-list-3">Piso</li>
+                <li id="word-list-4">Escola</li>
+                <li id="word-list-5">Cadeira</li>
+                <li id="word-list-6">Diferente</li>
+            </ul>
+        </div>
+
+        <!-- Coluna da direita com o caça-palavras -->
+        <div class="right-column">
+            <div id="word-search" class="grid">
+                <!-- As células da tabela serão geradas dinamicamente no JS -->
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">       
+        <button id="button-next" disabled>Avançar</button>
+    </div>
+
+    <script>
+        let words = [
+            { id: 0, marked: false, word: "acesso", coordinates: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5]] },
+            { id: 1, marked: false, word: "rampa", coordinates: [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]] },
+            { id: 2, marked: false, word: "barra", coordinates: [[6, 1], [6, 2], [6, 3], [6, 4], [6, 5]] },
+            { id: 3, marked: false, word: "piso", coordinates: [[7, 1], [7, 2], [7, 3], [7, 4]] },
+            { id: 4, marked: false, word: "escola", coordinates: [[0, 6], [1, 6], [2, 6], [3, 6], [4, 6], [5, 6]] },
+            { id: 5, marked: false, word: "cadeira", coordinates: [[8, 0], [8, 1], [8, 2], [8, 3], [8, 4], [8, 5], [8, 6]] },
+            { id: 6, marked: false, word: "diferente", coordinates: [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7], [8, 7]] }
+        ];
+
+        const gridLetters = [
+            ["A", "C", "E", "S", "S", "O", "E", "D"],
+            ["R", "A", "B", "M", "Q", "K", "S", "I"],
+            ["A", "C", "A", "D", "E", "I", "C", "F"],
+            ["M", "L", "G", "C", "A", "O", "O", "E"],
+            ["P", "J", "A", "F", "E", "T", "L", "R"],
+            ["A", "Z", "N", "E", "N", "E", "A", "E"],
+            ["S", "B", "A", "R", "R", "A", "N", "N"],
+            ["S", "P", "I", "S", "O", "R", "T", "T"],
+            ["C", "A", "D", "E", "I", "R", "A", "E"]
+        ];
+
+        const grid = document.getElementById("word-search");
+
+        // Função para criar a grid com as letras
+        function createGrid() {
+            gridLetters.forEach((row, rowIndex) => {
+                row.forEach((letter, colIndex) => {
+                    const cell = document.createElement("div");
+                    cell.id = 'wsc-'+rowIndex.toString()+'-'+colIndex.toString(); //word-search-cell
+                    cell.textContent = letter;
+                    cell.dataset.row = rowIndex;
+                    cell.dataset.col = colIndex;
+                    //cell.classList.add("cell");                    
+                    //cell.addEventListener("click", toggleCellColor(event));
+                    cell.addEventListener("click", (event) => {
+                        toggleCellColor(cell.id)
+                        });
+                    grid.appendChild(cell);
+                });
+            });
+        }
+
+        // Alternar a cor das células ao clicar
+        function toggleCellColor(id) {
+            let cell = document.getElementById(id);
+
+            
+            if (cell.classList.contains("green")) return;
+
+            if (cell.classList.contains("yellow")) {
+                cell.classList.remove("yellow");
+            } else {
+                cell.classList.add("yellow");
+            }
+
+            if (checkWords()) {
+                document.getElementById("button-next").disabled = false;                
+                //alert('Sucesso');
+            }
+        }
+
+        // Verificar se alguma palavra foi completamente destacada
+        function checkWords() {
+            let fieldYellow = Array.from({ length: 9 }, () => Array(8).fill(false));
+            for (let line = 0; line < 9; line++) {
+                for (let col = 0; col < 8; col++) {
+                    const cell = document.getElementById('wsc-'+line+'-'+col);
+                    fieldYellow[line][col] = cell.classList.contains("yellow");
+                }            
+            }
+           
+            let allGreen = true;
+            words.forEach(word => {
+                let allYellow = true;                
+                if (!word.marked) {
+                    for (let i = 0; i < word.coordinates.length; i++) {
+                        const cell = document.getElementById('wsc-'+word.coordinates[i][0]+'-'+word.coordinates[i][1]);                        
+                        const isYellow = cell.classList.contains("yellow");
+                        allYellow = allYellow && isYellow;
+                        if(isYellow) {
+                            fieldYellow[word.coordinates[i][0]][word.coordinates[i][1]] = false;
+                        }
+                        if (!allYellow) {
+                            break;
+                        }
+                    }
+                    if (allYellow) {  
+                        let turnGreen = true;                      
+                        for (let line = 0; line < 9; line++) {
+                            for (let col = 0; col < 8; col++) {                                
+                                if (fieldYellow[line][col]) {
+                                    turnGreen = false;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (turnGreen) {
+                            for (let i = 0; i < word.coordinates.length; i++) {
+                                let cell = document.getElementById('wsc-'+word.coordinates[i][0]+'-'+word.coordinates[i][1]);
+                                cell.classList.remove("yellow");
+                                cell.classList.add("green");
+                            }
+                            word.marked = true;
+                            let globalWord = document.getElementById('word-list-'+word.id);
+                            globalWord.style = 'font-weight: bold;';
+                        }
+                    }
+                } 
+                allGreen = allGreen && word.marked;               
+            });
+
+            return allGreen;
+        }
+
+
+        // Inicializar a grid
+        createGrid();
+
+        document.getElementById("button-next").onclick = function () {
+            window.location.href = "riddle.html";
+        }        
+    </script>
+
+</body>
+</html>
