@@ -1,0 +1,83 @@
+const student = [
+
+    [        
+        //nome de exibição   
+        'Maria Oliveira',
+        //nome do usuario (username)
+        'mariaoliveira',
+        //evolução da pontuação
+        [['2024-9-5', 2500], ['2024-9-7', 2600], ['2024-9-12', 2750], ['2024-9-14', 2800] ],
+        //bonus -> data, pontos, motivo, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //icone do usuario
+        './imgs/avatars/area-52-purple.svg',
+        //presença -> dia, presente:1/faltou:0
+        [['2024-9-5', 1], ['2024-9-7', 1], ['2024-9-12', 1], ['2024-9-14', 1]]
+    ],
+    [    
+        //nome de exibição        
+        'Pedro Santos',
+        //nome do usuario (username)
+        'pedrosantos',
+        //evolução da pontuação
+        [['2024-9-5', 2000], ['2024-9-7', 2000], ['2024-9-12', 2000], ['2024-9-14', 2000] ],
+        //bonus -> data, pontos, motivo, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //icone do usuario        
+        './imgs/avatars/aqualine-seed.svg',
+        //presença -> dia, presente:1/faltou:0
+        [['2024-9-5', 1], ['2024-9-7', 0], ['2024-9-12', 0], ['2024-9-14', 0]]        
+    ],
+    [           
+        //nome de exibição 
+        'Ana Rodrigues',
+        //nome do usuario (username)
+        'anarodrigues',
+        //evolução da pontuação
+        [['2024-9-5', 1900], ['2024-9-7', 1900], ['2024-9-12', 1900], ['2024-9-14', 1900] ],
+        //bonus -> data, pontos, motivo, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //icone do usuario
+        './imgs/avatars/blobby-purple.svg',
+        //presença -> dia, presente:1/faltou:0
+        [['2024-9-5', 1], ['2024-9-7', 0], ['2024-9-12', 0], ['2024-9-14', 0]]            
+    ],
+    [           
+        //nome de exibição 
+        'Lucas Ferreira',
+        //nome do usuario (username)
+        'lucasferreira',
+        //evolução da pontuação
+        [['2024-9-5', 1800], ['2024-9-7', 1850], ['2024-9-12', 1850], ['2024-9-14', 2850] ],
+        //bonus -> data, pontos, motivo, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //icone do usuario                
+        './imgs/avatars/eggleston-green.svg',
+        //presença -> dia, presente:1/faltou:0
+        [['2024-9-5', 1], ['2024-9-7', 1], ['2024-9-12', 0], ['2024-9-14', 0]]                    
+    ],
+    [           
+        //nome de exibição 
+        'João Silva',
+        //nome do usuario (username)
+        'joaosilva',
+        //evolução da pontuação
+        [['2024-9-5', 1800], ['2024-9-7', 1850], ['2024-9-12', 1850], ['2024-9-14', 1950] ],
+        //bonus -> data, pontos, motivo, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel 
+        [['2024-9-5', 0, '', ''] ], 
+        //icone do usuario                
+        './imgs/avatars/stelly-blue.svg',
+        //presença -> dia, presente:1/faltou:0
+        [['2024-9-5', 1], ['2024-9-7', 1], ['2024-9-12', 0], ['2024-9-14', 1]]                    
+    ]    
+];
