@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #error-message {
+            color: red;
+        }
+    </style>
+
+    <script src="./js/constants.js"></script>    
+    <script src="./js/users-list.js"></script>    
+    <script>
+        function enviarDados(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            username_index = -1;
+            const inputValue = document.getElementById('username').value;            
+            for (let i = 0; i < student.length; i++) {
+                if (student[i][studentColUserName] == inputValue) {
+                    username_index = i;
+                    break;
+                }
+            }
+            if (username_index > -1) {
+                const url = 'home.html?id=' + username_index.toString();
+                window.location.href = url;
+            } else {
+                document.getElementById("error-message").innerText = "O nome de usuário é inválido.";
+                setTimeout(() => {
+                  document.getElementById("error-message").innerText = "";  
+                }, "4000");                
+            }            
+        }
+
+        document.getElementById('username').addEventListener("keypress", function(event) {  
+            if (event.key === "Enter") {                       
+                document.getElementById('button-ok').click();
+            }
+        });        
+    </script>
+</head>
+<body>
+    <form id="login-form">
+        <label for="username">Nome de usuário:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <button id="button-ok" type="submit" onclick="enviarDados(event);">Entrar</button>
+        <p id="error-message"></p>
+    </form>
+</body>
+</html>
