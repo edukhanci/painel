@@ -70,10 +70,6 @@ user_perfil.accGold = getGold;
 
 function getDayState(day_str) {
     const data_referencia = new Date(day_str);
-
-    
-    
-
     for (let i = 0; i < user_perfil.attendance.length; i++) {
         const data_ocorrencia = new Date(user_perfil.attendance[i][scDate]);        
         if (
@@ -81,6 +77,12 @@ function getDayState(day_str) {
             (data_ocorrencia.getMonth() == data_referencia.getMonth()) &&
             (data_ocorrencia.getDate() == data_referencia.getDate())
         ) {
+            /*
+            console.log('scDate: ' + user_perfil.attendance[i][scDate]);
+            console.log('param: ' + day_str);
+            console.log(data_ocorrencia);
+            console.log(data_referencia);
+            */
             return user_perfil.attendance[i][scaValue];
         }
     }    

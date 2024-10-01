@@ -3,7 +3,7 @@ const student = [
 		//nome de exibição
 		'Akássia Estter',
 		//nome do usuario (username)
-		'akassiasantos',
+		'akassiasilva',
 		//evolução da pontuação
 		[ ['2024-09-26', 115271] ],
 		//bonus -> data, pontos, motivo, responsavel
@@ -67,7 +67,7 @@ const student = [
 		//nome de exibição
 		'Grazy Silva',
 		//nome do usuario (username)
-		'grazielysilva',
+		'grazielisilva',
 		//evolução da pontuação
 		[ ['2024-09-26', 94007] ],
 		//bonus -> data, pontos, motivo, responsavel
@@ -131,7 +131,7 @@ const student = [
 		//nome de exibição
 		'Rafael Rodrigues',
 		//nome do usuario (username)
-		'rafaelrodrigues',
+		'rafaelsilva',
 		//evolução da pontuação
 		[ ['2024-09-26', 34685] ],
 		//bonus -> data, pontos, motivo, responsavel
@@ -179,7 +179,7 @@ const student = [
 		//nome de exibição
 		'Thalysson Arthur',
 		//nome do usuario (username)
-		'thalyssonarthur',
+		'thalysonlima',
 		//evolução da pontuação
 		[ ['2024-09-26', 78695] ],
 		//bonus -> data, pontos, motivo, responsavel
@@ -195,7 +195,7 @@ const student = [
 		//nome de exibição
 		'Thaynara Vitória',
 		//nome do usuario (username)
-		'thaynaravitoria',
+		'thaynaralima',
 		//evolução da pontuação
 		[ ['2024-09-26', 69542] ],
 		//bonus -> data, pontos, motivo, responsavel
@@ -211,7 +211,7 @@ const student = [
 		//nome de exibição
 		'Yan Davi',
 		//nome do usuario (username)
-		'yandavi',
+		'yanlima',
 		//evolução da pontuação
 		[ ['2024-09-26', 25525] ],
 		//bonus -> data, pontos, motivo, responsavel

@@ -20,6 +20,13 @@ function clearCalendarMap(){
     }
 }
 
+function iso8661(year_number, month_number, day_number) {
+    const year_str  = year_number.toString();
+    const month_str = month_number > 9 ? month_number.toString() : ('0'+month_number.toString()) ;
+    const day_str   = day_number   > 9 ? day_number.toString()   : ('0'+day_number.toString()  ) ;
+    return year_str+'-'+month_str+'-'+day_str;
+}
+
 function fillCalendarMap(selectedDate) {
     //preenche o mapeamento do calendário, com os dias do mês de interesse, e
     //continua preenchendo até encerrar a matriz com o mês seguinte.    
@@ -88,7 +95,8 @@ function feedHtmlCalendar(selectedDate) {
                 calendar_cell.classList.add('highlighted-day');
             }
 
-            const presenca = getDayState(calendar_map[j][i][cmYear].toString()+'-'+calendar_map[j][i][cmMonth].toString()+'-'+calendar_map[j][i][cmDay].toString());                        
+            //getDayState -> user-perfil.js
+            const presenca = getDayState(iso8661(calendar_map[j][i][cmYear], calendar_map[j][i][cmMonth], calendar_map[j][i][cmDay]) ); 
             if (presenca == 0) {
                 calendar_cell.classList.add('calendar-block-background');
             } else if (presenca == 1) {

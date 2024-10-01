@@ -50,6 +50,9 @@ function loadLevel(id) {
     form.labelTip().innerHTML = level[id][levelTip];
     form.inputAnswer().value ='';
     form.inputAnswer().maxLength = level[id][levelAnswer].length;
+    if (id == 0) {
+      form.inputAnswer().maxLength = 100;
+    }
     form.labelCharRemaining().innerHTML = 'Caracteres restantes: ' + form.inputAnswer().maxLength;
     form.labelAnswFormat().innerHTML = 'Formato da resposta: '+level[id][levelFormatAns];
     form.hiddenComments().innerHTML = '<!-- '+level[id][levelComments]+' -->';
@@ -77,10 +80,28 @@ function loadLevel(id) {
     form.inputContainer().style.display = 'none';
   }
 
-  document.querySelector("#input-answer").focus();
+  document.querySelector("#input-answer").focus();  
 }
 
 function testAns() {
+
+  const answerValue  = form.inputAnswer().value;
+
+  //a fim de voltar de onde parou, no level zero é possível digitar a ultima resposta
+  //encontrada para voltar de onde parou.
+  if (current_level == 0) {
+    if (answerValue.toLowerCase() != level[0][levelAnswer]) {
+      for (let i = 1; i < level.length; i++) {
+        if (answerValue.toLowerCase() == level[i][levelAnswer]) {
+          if ((i+1) < level.length)
+            current_level = i+1;
+            loadLevel(current_level);
+          return;
+        }
+      }      
+    }
+  }
+
   if (form.buttonOk().textContent == 'Próxima') {
     document.querySelector("#input-answer").disabled = false;    
     form.buttonOk().textContent = 'Verificar';
@@ -90,7 +111,7 @@ function testAns() {
     return;   
   }
 
-  const answerValue  = form.inputAnswer().value;    
+      
   if (!answerValue) {
       alert("Resposta incorreta...  :'(");
   } else if (answerValue.toLowerCase() == level[current_level][levelAnswer]) {
