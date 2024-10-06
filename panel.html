@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - Administrador</title>
+    <style>
+        /*
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        */
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(140 140 140);
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            /*width: 100%;*/
+        }
+
+        caption {
+            caption-side: bottom;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        thead,
+        tfoot {
+            background-color: rgb(228 240 245);
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(160 160 160);
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        td:last-of-type {
+            text-align: center;
+        }
+
+        tbody > tr:nth-of-type(even) {
+            background-color: rgb(237 238 242);
+        }
+        tbody > tr:nth-of-type(odd) {
+            background-color: rgb(255 255 255);
+        }        
+
+        tfoot th {
+            text-align: right;
+        }
+
+        tfoot td {
+            font-weight: bold;
+        }     
+        
+        .img-username {
+            border: 1px solid #ddd;
+            border-radius: 50%; /*4px;*/
+            /*padding: 5px;*/
+            width: 32px;
+            height: 32px;
+        }
+
+        .img-elo {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            /*padding: 5px;*/
+            width: 24px;
+            height: 15px;            
+        }   
+        
+          
+    </style>    
+</head>
+
+<body>
+
+
+    <div style="display: block;">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Nome de Exibição</th>
+                    <th scope="col">Nome de Usuário</th>
+                    <th scope="col">P/F(%)</th>
+                    <th scope="col">Pontuação</th>
+                    <th scope="col">Diamantes</th>                
+                    <th scope="col">Posição</th>
+                    <th scope="col">Elo</th>
+                    <th scope="col">Detalhes</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-user-list">
+                <tr id="tr-user-list-dummy">
+                    <th scope="row" style="text-align: center;"><img class="img-username" src="https://cdn.kastatic.org/images/avatars/svg/stelly-blue.svg"></th>
+                    <th scope="row">Nome Sobrenome</th>
+                    <td>nomesobrenome</td>
+                    <td>8/2(80%)</td>
+                    <td>15.000</td>
+                    <td>2.000</td>                
+                    <td>1</td>
+                    <td scope="row" style="text-align: center;"><img class=".img-elo" src="./imgs/elos/littlechick.png"></td>
+                    <td><button id="button-details" onclick="" title="Clique para carregar os detalhes...">...</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <div id="details-container" style="background-color: #eee; padding: 10px; border:1px solid black; border-radius: 5px;" onclick="hideDetailsForm();">
+        <div style="display: block;">
+            <br>                    
+            <span style="cursor:pointer">
+              <h2 id="details-title" style="margin-top: 0px; background-color: #ddd;" title="Clique para recolher.">Nome Sobrenome (nomesobrenome)</h2>
+            </span>
+            <div style="display: block; width: fit-content;">
+                <table id="table-score-attendance">
+                    <thead>
+                        <tr>
+                            <th scope="row">Data</th>
+                            <th scope="row">Pontos de Energia</th>
+                            <th scope="row">Presente</th>
+                        </tr>                   
+                    </thead>                
+                    <tbody id="tbody-score-attendance">
+                        <tr id="tr-details-score-dummy">
+                            <td>10/10/2024</td>
+                            <td>15.000</td>
+                            <td>Sim</td>
+                        </tr> 
+                    </tbody>
+                </table>            
+            </div>      
+        </div>
+
+        <br>
+        <div style="display: block;">
+            <table id="table-spent">
+                <thead>
+                    <tr>
+                        <th scope="row">Data</th>
+                        <th scope="row">Utilizado</th>
+                        <th scope="row">Responsável</th>
+                        <th scope="row">Motivo</th>
+                    </tr>                   
+                </thead>                
+                <tbody id="tbody-spent-table">
+                    <tr id="tr-details-spent-dummy">
+                        <td>10/10/2024</td>
+                        <td>1.000</td>
+                        <td>Fulano Ciqueira</td>
+                        <td>Resgate de prêmio: Uma bola;</td>
+                    </tr> 
+                </tbody>
+            </table>         
+        </div>
+
+        <br>
+        <div style="display: block;">
+            <table id="table-bonus">
+                <thead>
+                    <tr>
+                        <th scope="row">Data</th>
+                        <th scope="row">Bônus</th>
+                        <th scope="row">Responsável</th>
+                        <th scope="row">Motivo</th>
+                    </tr>                   
+                </thead>                
+                <tbody id="tbody-bonus-table">
+                    <tr id="tr-details-bonus-dummy">
+                        <td>10/10/2024</td>
+                        <td>1.000</td>
+                        <td>Fulano Ciqueira</td>
+                        <td>Bônus por atividades extras;</td>
+                    </tr> 
+                </tbody>
+            </table>         
+        </div>    
+    </div>
+
+    <div style="display: block;">
+        <br>
+        <h2>Chamada (geral)</h2>
+        <div style="float: left; width: fit-content;">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="row">Dia</th>
+                    </tr>                   
+                </thead>                
+                <tbody id="tbody-chamada-nomes">
+                    <tr id="tr-chamada-nome-dummy"><th scope="row">Nome Sobrenome 1</th></tr>                     
+                </tbody>
+            </table>
+        </div>
+        <div style="overflow-x:auto; flex: 1;">
+            <table>
+                <thead id="thead-chamada-data">
+                    <tr id="tr-chamada-data-dummy">
+                        <th scope="row">01/10</th>                                                                                                                     
+                    </tr>                   
+                </thead>                
+                <tbody id="tbody-chamada-status">
+                    <tr id="tr-chamada-status-dummy">
+                        <td scope="row">P</td>                        
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+        </div>        
+    </div>
+
+
+    
+
+
+
+</body>
+
+
+<script src="./js/constants.js"></script>
+<script src="./js/elo-list.js"></script>
+<script src="./js/users-list.js"></script>
+<script src="./js/user-perfil.js"></script>
+<script src="./js/calendar.js"></script>
+
+<script>
+
+    document.getElementById("tr-user-list-dummy").remove();
+    document.getElementById("tr-details-score-dummy").remove();
+
+    document.getElementById("tr-details-spent-dummy").remove();
+    document.getElementById("tr-details-bonus-dummy").remove();
+    
+    document.getElementById("tr-chamada-nome-dummy").remove();
+    document.getElementById("tr-chamada-data-dummy").remove();
+    document.getElementById("tr-chamada-status-dummy").remove();
+
+    //preenche a lista de estudantes
+    for (let i = 0; i < student.length; i++) {   
+        //preparando imagem do usuario 
+        const imgUser = document.createElement("img");
+        imgUser.src=student[i][studentColSrcIco];
+        imgUser.className = 'img-username';
+
+        //preparando imagem do elo-usuario 
+        const imgUserElo = document.createElement("img");
+        imgUserElo.src = getEloInfo( getUserScore(i) )[elIcoSrc];
+        imgUserElo.title = getEloInfo( getUserScore(i) )[elName];
+        imgUserElo.className = 'img-elo';        
+
+        //preparando o botao detalhes (...)
+        const buttonDetails = document.createElement("button");
+        buttonDetails.title = 'Clique para carregar mais detalhes de "'+student[i][studentColName]+'"...'
+        buttonDetails.onclick = function() { loadUserDetails(i) }
+        const buttonDetailsText = document.createTextNode('...');
+        buttonDetails.appendChild(buttonDetailsText);
+
+        //anexando image do usuário ao <th>
+        const thImgUser = document.createElement("th");
+        thImgUser.scope = 'row';
+        thImgUser.style = 'text-align: center;';
+        thImgUser.appendChild(imgUser);
+
+        //criando e anexando o display name
+        const thDispNameText = document.createTextNode(student[i][studentColName]);
+        const linkDispName = document.createElement("a");
+        linkDispName.href = 'home.html?id='+i.toString();
+        linkDispName.style = 'text-decoration: none;';
+        const thDispName = document.createElement("th");
+        linkDispName.appendChild(thDispNameText);
+        thDispName.appendChild(linkDispName);
+        thDispName.scope = 'row';
+
+        //criando e anexando o username
+        const tdUserNameText = document.createTextNode(student[i][studentColUserName]);
+        const tdUserName = document.createElement("td");     
+        tdUserName.appendChild(tdUserNameText);
+               
+        //criando e anexando o índice de presença/falta
+        const totalPresencas = attendanceCount(i);
+        const totalFaltas = notAttendanceCount(i);
+        const presencaPercentual = Math.trunc((totalPresencas / (totalPresencas + totalFaltas))*100);
+        const tdAttendanceText = document.createTextNode(totalPresencas.toString()+'/'+totalFaltas.toString()+'('+presencaPercentual.toString()+'%)');
+        const tdAttendance = document.createElement("td");     
+        tdAttendance.appendChild(tdAttendanceText);   
+        
+        //criando e anexando o score
+        const tdScoreText = document.createTextNode( formatNumber(getUserScore(i)) );
+        const tdScore = document.createElement("td");     
+        tdScore.appendChild(tdScoreText);  
+        
+        //criando e anexando o total de diamantes
+        const totalDiamantes = getUserScore(i) + getUserAccBonus(i) - getUserAccSpent(i);
+        const tdDiamondsText = document.createTextNode( formatNumber(totalDiamantes) );
+        const tdDiamonds = document.createElement("td");     
+        tdDiamonds.appendChild(tdDiamondsText);          
+
+        //criando e anexando a posição no ranking geral
+        const rankingPos = 1;
+        const tdRankingPosText = document.createTextNode(rankingPos.toString());
+        const tdRankingPos = document.createElement("td");     
+        tdRankingPos.appendChild(tdRankingPosText);       
+        
+        //anexando a imagem do elo ao td
+        const tdUserElo = document.createElement("td");     
+        tdUserElo.style = 'text-align: center;'
+        tdUserElo.appendChild(imgUserElo);               
+        
+        //anexando o botao de detalhes ao td
+        const tdButtonDetails = document.createElement("td");             
+        tdButtonDetails.appendChild(buttonDetails);     
+        
+        //criando o tr e anexando os td's
+        const trUserList = document.createElement("tr");             
+        trUserList.appendChild(thImgUser);
+        trUserList.appendChild(thDispName);
+        trUserList.appendChild(tdUserName);
+        trUserList.appendChild(tdAttendance);
+        trUserList.appendChild(tdScore);
+        trUserList.appendChild(tdDiamonds);
+        trUserList.appendChild(tdRankingPos);
+        trUserList.appendChild(tdUserElo);
+        trUserList.appendChild(tdButtonDetails);
+
+        //procurando tbody, e anexando a nova tr
+        document.getElementById("tbody-user-list").appendChild(trUserList);
+    }
+
+
+    //preenche a lista da chamada com os nomes dos estudantes
+    for (let i = 0; i < student.length; i++) { 
+        //criando e anexando o display name
+        const thDispNameText = document.createTextNode(student[i][studentColName]);
+        const thDispName = document.createElement("th");     
+        thDispName.appendChild(thDispNameText);
+        thDispName.scope = 'row';   
+        
+        //criando a linha (tr)
+        const trDispName = document.createElement("tr");  
+        trDispName.appendChild(thDispName);
+        document.getElementById("tbody-chamada-nomes").appendChild(trDispName);
+    }
+
+    //cria a lista de dias
+    let dia_referencia = [];
+    for (let i = 0; i < student.length; i++) { 
+        for (let j = 0; j < student[i][studentColAttendance].length; j++) {
+            let novo_dia = true;
+            for (let k = 0; k < dia_referencia.length; k++) {                
+
+                dia1 = iso8661Format(dia_referencia[k]);                
+                dia2 = student[i][studentColAttendance][j][scDate];                
+                if (dia1 == dia2) {
+                    novo_dia = false;                    
+                    break;
+                }
+            }
+            if (novo_dia) {
+                const data = new Date(student[i][studentColAttendance][j][scDate]);                
+                dia_referencia.push(data);
+            }
+        }
+    }
+    //organiza a lista de dias em ordem crescente
+    dia_referencia.sort((a, b) => b - a);
+    //cria a lista com as presenças
+    let estudantes_presenca = [];    
+    for (let i = 0; i < student.length; i++) {
+        let presenca_referencia = [];
+        for (let j = 0; j < dia_referencia.length; j++) {                           
+            presenca_referencia.push( attendance2str( getAttendance(i, iso8661Format(dia_referencia[j])) , 'P', 'A') );
+        } 
+        estudantes_presenca.push(presenca_referencia);
+    }
+    //cria linha com as datas    
+    let trDataChamada = document.createElement("tr");      
+    for (let i = 0; i < dia_referencia.length; i++) {
+        //criando e anexando o display name
+        const thDispNameText = document.createTextNode(dateDisplay(dia_referencia[i]));
+        const thDispName = document.createElement("th");     
+        thDispName.appendChild(thDispNameText);
+        thDispName.scope = 'row';   
+        trDataChamada.appendChild(thDispName);        
+    }
+    document.getElementById("thead-chamada-data").appendChild(trDataChamada);        
+    //cria linha com as presenças
+    for (let i = 0; i < estudantes_presenca.length; i++) {
+        //criando a linha (tr)
+        let trDispName = document.createElement("tr");  
+        for (let j = 0; j < dia_referencia.length; j++) {  //estudantes_presenca
+            //criando e anexando o display name
+            const tdDispNameText = document.createTextNode(estudantes_presenca[i][j]);
+            const tdDispName = document.createElement("td");     
+            tdDispName.appendChild(tdDispNameText);            
+            trDispName.appendChild(tdDispName);
+        }        
+        document.getElementById("tbody-chamada-status").appendChild(trDispName);                
+    }
+
+
+
+
+
+    function loadUserDetails(uid) {  
+        document.getElementById("details-container").style.display = 'block';
+        document.getElementById("details-title").innerText = student[uid][studentColName] + ' ('+student[uid][studentColUserName]+')';
+
+
+        //limpa a tabela de cristais gastos antes de inserir os dados do usuario corrente
+        tableSpent = document.getElementById("table-spent");
+        for(let i = tableSpent.rows.length - 1; i > 0; i--) {
+            tableSpent.deleteRow(i);
+        }     
+
+        //adiciona linhas a tabela de resgates (diamantes gastos para resgatar premios)
+        let spent_table = student[uid][studentColSpent];
+        for (let i = 0; i < spent_table.length; i++) {
+            spent_table[i][0] = new Date(spent_table[i][0]); 
+        }
+	    //organiza a lista de dias em ordem crescente
+        spent_table.sort((a, b) => b[0] - a[0]);           
+        for (let i = 0; i < spent_table.length; i++) {
+            //criando e anexando a data            
+            const tdDataSpentText = document.createTextNode( dateDisplay(spent_table[i][0]) );
+            const tdDataSpent = document.createElement("td");     
+            tdDataSpent.appendChild(tdDataSpentText);
+
+            //criando e anexando os pontos gastos
+            const tdPointsSpentText = document.createTextNode(spent_table[i][scScore]);
+            const tdPointsSpent = document.createElement("td");     
+            tdPointsSpent.appendChild(tdPointsSpentText);            
+
+            //criando e anexando o nome do responsavel pela transacao
+            const tdResponsibleText = document.createTextNode(spent_table[i][scUser]);
+            const tdResponsible = document.createElement("td");     
+            tdResponsible.appendChild(tdResponsibleText);   
+
+            //criando e anexando o motivo da transacao
+            const tdDescText = document.createTextNode(spent_table[i][scDesc]);
+            const tdDesc = document.createElement("td");     
+            tdDesc.appendChild(tdDescText);   
+
+            //criando a linha para incluir na tabela
+            const trSpent = document.createElement("tr");
+            trSpent.appendChild(tdDataSpent);
+            trSpent.appendChild(tdPointsSpent);
+            trSpent.appendChild(tdResponsible);
+            trSpent.appendChild(tdDesc);
+
+            //incluindo a linha "tr" na tabela
+            document.getElementById("tbody-spent-table").appendChild(trSpent);
+        }
+
+        //limpa a tabela de bonus antes de inserir os dados do usuario corrente
+        tableBonus = document.getElementById("table-bonus");
+        for(let i = tableBonus.rows.length - 1; i > 0; i--) {
+            tableBonus.deleteRow(i);
+        }          
+
+        //adiciona linhas a tabela de bonificações (diamantes ganhos por atividades extras ou fora do khan)
+        let bonus_table = student[uid][studentColBonus];        
+        for (let i = 0; i < bonus_table.length; i++) {
+            bonus_table[i][0] = new Date(bonus_table[i][0]); 
+        }        
+	    //organiza a lista de dias em ordem crescente
+        bonus_table.sort((a, b) => b[0] - a[0]);        
+        for (let i = 0; i < bonus_table.length; i++) {
+            //criando e anexando a data
+            const tdDataBonusText = document.createTextNode( dateDisplay(bonus_table[i][0]));
+            const tdDataBonus = document.createElement("td");     
+            tdDataBonus.appendChild(tdDataBonusText);
+
+            //criando e anexando os pontos gastos
+            const tdPointsBonusText = document.createTextNode(bonus_table[i][scScore]);
+            const tdPointsBonus = document.createElement("td");     
+            tdPointsBonus.appendChild(tdPointsBonusText);            
+
+            //criando e anexando o nome do responsavel pela transacao
+            const tdResponsibleText = document.createTextNode(bonus_table[i][scUser]);
+            const tdResponsible = document.createElement("td");     
+            tdResponsible.appendChild(tdResponsibleText);   
+
+            //criando e anexando o motivo da transacao
+            const tdDescText = document.createTextNode(bonus_table[i][scDesc]);
+            const tdDesc = document.createElement("td");     
+            tdDesc.appendChild(tdDescText);   
+
+            //criando a linha para incluir na tabela
+            const trBonus = document.createElement("tr");
+            trBonus.appendChild(tdDataBonus);
+            trBonus.appendChild(tdPointsBonus);
+            trBonus.appendChild(tdResponsible);
+            trBonus.appendChild(tdDesc);
+
+            //incluindo a linha "tr" na tabela
+            document.getElementById("tbody-bonus-table").appendChild(trBonus);
+        }        
+
+        //limpa a tabela de pontuação e presença antes de inserir os dados do usuario corrente
+        tableScoreAndAttendance = document.getElementById("table-score-attendance");
+        for(let i = tableScoreAndAttendance.rows.length - 1; i > 0; i--) {
+            tableScoreAndAttendance.deleteRow(i);
+        }        
+
+        const scoreAndAttendance = getScoreAndAttendance(uid);
+        //organiza a lista de dias em ordem crescente
+        scoreAndAttendance.sort((a, b) => b[0] - a[0]);
+        for (let i = 0; i < scoreAndAttendance.length; i++) {
+            //criando e anexando a data
+            const tdDateScoreText = document.createTextNode(dateDisplay(scoreAndAttendance[i][scDate]));
+            const tdDateScore = document.createElement("td");     
+            tdDateScore.appendChild(tdDateScoreText);               
+
+            //criando e anexando os pontos de energia (score)
+            const tdScoreText = document.createTextNode(formatNumber(scoreAndAttendance[i][scScore]));
+            const tdScore = document.createElement("td");     
+            tdScore.appendChild(tdScoreText); 
+            
+            //criando e anexando a informação de comparecimento (presença)
+            const tdAttText = document.createTextNode(attendance2str(scoreAndAttendance[i][2], 'Sim', 'Não')); 
+            const tdAtt = document.createElement("td");     
+            tdAtt.appendChild(tdAttText);  
+            
+            //criando o tr
+            const trScoreAndAttendance = document.createElement("tr"); 
+            trScoreAndAttendance.appendChild(tdDateScore);
+            trScoreAndAttendance.appendChild(tdScore);
+            trScoreAndAttendance.appendChild(tdAtt);
+
+            //incluindo o tr no respectivo tbody
+            document.getElementById("tbody-score-attendance").appendChild(trScoreAndAttendance);
+            
+        }
+        
+
+    }
+
+    function hideDetailsForm() {
+        document.getElementById("details-container").style.display = 'none';
+    }
+
+    function getScoreAndAttendance(uid) {
+        let reg = [];
+
+        for (let i = 0; i < student[uid][studentColScore].length; i++) {            
+            const data = new Date(student[uid][studentColScore][i][scDate]);
+            const pontos = student[uid][studentColScore][i][scScore];
+            reg.push(  [data, pontos, -1] );
+        }
+
+        for (let i = 0; i < student[uid][studentColAttendance].length; i++) {
+            const newDate = new Date(student[uid][studentColAttendance][i][scDate]);
+            const novaData = iso8661Format(newDate);            
+            const presenca = student[uid][studentColAttendance][i][scaValue];
+            let dateFound = false;
+            for (let j = 0; j < reg.length; j++) {  
+                //console.log('-'+iso8661Format(reg[j][scDate])+'=='+newDate+'-');
+                if ( iso8661Format(reg[j][scDate]) == novaData) {                    
+                    dateFound = true;
+                    reg[j][2] = presenca;
+                    break;
+                }
+            }
+            if (dateFound == false) {                
+                reg.push(  [newDate, -1, Presenca] );
+            }                        
+        }        
+
+        return reg;
+    }
+
+    hideDetailsForm();
+</script>
+
+
+</html>

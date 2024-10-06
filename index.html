@@ -42,10 +42,14 @@
                 const url = 'home.html?id=' + username_index.toString();
                 window.location.href = url;
             } else {
-                document.getElementById("error-message").innerText = "O nome de usuário é inválido.";
-                setTimeout(() => {
-                  document.getElementById("error-message").innerText = "";  
-                }, "4000");                
+                if (inputValue.toLowerCase() == 'admin') {
+                    window.location.href = 'panel.html';
+                } else {
+                    document.getElementById("error-message").innerText = "O nome de usuário é inválido.";
+                    setTimeout(() => {
+                    document.getElementById("error-message").innerText = "";  
+                    }, "4000");                
+                }
             }            
         }
 
