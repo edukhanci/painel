@@ -27,6 +27,46 @@ function iso8661(year_number, month_number, day_number) {
     return year_str+'-'+month_str+'-'+day_str;
 }
 
+/*
+function dateDisplay(date) {
+  const dia =  date.getDate()+1; //tava voltando um dia, provavelmente pelo utc-3?
+  const mes =  date.getMonth()+1;
+  const ano =  date.getFullYear();
+  const dia_str = dia > 9 ? dia.toString() : '0' + dia.toString();
+  const mes_str = mes > 9 ? mes.toString() : '0' + mes.toString();
+  const ano_str = ano.toString();
+  return dia_str+'/'+mes_str+'/'+ano_str;
+}
+*/
+function dateDisplay(date) {
+    // Extrai o ano, mês e dia em UTC
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // O mês é zero-indexado, então adicionamos 1
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    // Retorna a data no formato ISO 8601
+    return `${day}/${month}/${year}`;
+  }
+
+/*
+function iso8661Format(date) {
+    const dia =  date.getDate()+1; //tava voltando um dia, provavelmente pelo utc-3?
+    const mes =  date.getMonth()+1;
+    const ano =  date.getFullYear();
+    const dia_str = dia > 9 ? dia.toString() : '0' + dia.toString();
+    const mes_str = mes > 9 ? mes.toString() : '0' + mes.toString();
+    const ano_str = ano.toString();
+    return ano_str+'-'+mes_str+'-'+dia_str;
+}
+*/
+function iso8661Format(date) {    
+    // Extrai o ano, mês e dia em UTC
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // O mês é zero-indexado, então adicionamos 1
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    // Retorna a data no formato ISO 8601
+    return `${year}-${month}-${day}`;
+}    
+
 function fillCalendarMap(selectedDate) {
     //preenche o mapeamento do calendário, com os dias do mês de interesse, e
     //continua preenchendo até encerrar a matriz com o mês seguinte.    

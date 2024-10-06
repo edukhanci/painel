@@ -88,3 +88,80 @@ function getDayState(day_str) {
     }    
     return -1;
 }
+
+function attendanceCount(uid) {
+    let counter = 0;
+    for (let i = 0; i < student[uid][studentColAttendance].length; i++) {
+        if ( student[uid][studentColAttendance][i][scaValue] > 0 ) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+function notAttendanceCount(uid) {
+    let counter = 0;
+    for (let i = 0; i < student[uid][studentColAttendance].length; i++) {
+        if ( student[uid][studentColAttendance][i][scaValue] == 0 ) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+function getUserScore(uid) {
+    const last_score_index = student[uid][studentColScore].length - 1;
+    return student[uid][studentColScore][ last_score_index ][scScore];    
+}
+
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}   
+
+function getUserAccBonus(uid) {
+    let sum = 0;
+    for (let i = 0; i < student[uid][studentColBonus].length; i++) {
+        sum += student[uid][studentColBonus][scScore];        
+    }
+    return sum;
+}
+
+function getUserAccSpent(uid) {
+    let sum = 0;
+    for (let i = 0; i < student[uid][studentColSpent].length; i++) {
+        sum += student[uid][studentColSpent][scScore];        
+    }
+    return sum;
+}
+
+function attendance2str(number, presente_str, ausente_str) {
+  if (number == 1) {
+    return presente_str;
+  } else if (number == 0) {
+    return ausente_str;
+  } else {
+    return '';
+  }
+}
+
+function getAttendance(uid, day_str) {
+    let result = -1;    
+    for (let i = 0; i < student[uid][studentColAttendance].length; i++) {
+
+        if (uid == 0) {
+            //console.log( student[uid][studentColAttendance][i][scDate] +'<>'+ day_str );
+            //console.log( student[uid][studentColAttendance] );
+        }
+
+        if (
+            student[uid][studentColAttendance][i][scDate] == day_str
+        ) {     
+            result = student[uid][studentColAttendance][i][scaValue];
+            break;
+        }
+    }    
+    if ((result == -1) && (uid == 0) ) {        
+        //console.log( '^^');
+    }
+    return result;
+}
