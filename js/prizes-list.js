@@ -32,7 +32,7 @@ const itemAlt           = 5;
         'Pop Bracelet Fidget Toy'
     ],    
     [   
-        'Mola Maluca',
+        'Mini Mola Maluca',
         'Divirta-se com a Mola Maluca! Perfeita para criar brincadeiras incríveis e estimular a criatividade! 🌈✨',
         '12',
         '1.000',
@@ -72,7 +72,7 @@ const itemAlt           = 5;
         'Lousa Mágica'
     ],
     [   
-        'Pacote com 30 cubos desafiadores | BONNYCO',
+        'Cubos desafiadores | BONNYCO',
         'Cada cubo é um desafio diferente. Perfeito para estimular a mente e alegrar as festas.',
         '1',
         '999.000',
@@ -80,7 +80,7 @@ const itemAlt           = 5;
         'Quebra-cabeça de Cubos'
     ],    
     [   
-        'Caixa com 24 fidgets | Giggle Zone',
+        'Fidgets | Giggle Zone',
         'Se você precisa de ajuda para manter o foco na escola, relaxar durante um intervalo ou pensar criativamente, este conjunto é para você! A caixa de fidgets da Giggle Zone contém vários brinquedos que estimulam a criatividade e combatem o stress.',
         '1',
         '999.000',
@@ -134,7 +134,105 @@ const itemAlt           = 5;
         '999.000',
         './imgs/prizes/good-vibes-charms.png',
         'Pingentes decorativos'
-    ]        
+    ],
+    //-------------------
+    [   
+        'Pula Sapinho',
+        'Pule, pule, sem parar, o sapinho vai te encantar! 🐸',
+        '1',
+        '999.000',
+        './imgs/prizes/pula-sapinho.png',
+        'Sapinho de plástico'
+    ],  
+    [   
+        'Bolinhas Gelatinosas',
+        'Aperte e sinta a diversão. Estresse? Nem pensar!',
+        '1',
+        '999.000',
+        './imgs/prizes/bolas-gelatinosas.png',
+        'Bolinhas gelatinosas antiestresse'
+    ],
+    [   
+        'Lingua de Sogra',
+        'Sopre e faça festa, com a língua mais divertida do mundo!',
+        '1',
+        '999.000',
+        './imgs/prizes/lingua-sogra.png',
+        'Lingua de Sogra'
+    ],
+    [   
+        'Spinner',
+        'Gire e veja a mágica acontecendo. Diversão sem fim! 🌪️',
+        '1',
+        '999.000',
+        './imgs/prizes/spinner.png',
+        'Spinner articulado'
+    ],
+    [   
+        'Brinquedinho para o seu Pet',
+        'Mime o seu pet com esses brinquedinhos super divertidos. Os gatinhos vão amar.',
+        '1',
+        '999.000',
+        './imgs/prizes/cat-toy-2.png',
+        'Brinquedinho para Pets'
+    ],
+    [   
+        'Quebra-Cabeça 3D',
+        'Monte e desmonte! Este enigma em 3D é só para os corajosos! 🧩',
+        '1',
+        '999.000',
+        './imgs/prizes/3d-puzzles.png',
+        'Quebra-Cabeça 3D'
+    ],
+    [   
+        'Aneis de Neon Divertidos',
+        'Brilhe como uma estrela com estes anéis super chamativos! ✨',
+        '1',
+        '999.000',
+        './imgs/prizes/neon-plastic-rings-2.png',
+        'Aneis Plásticos de Neon'
+    ],
+    [   
+        'Pulseira Slap',
+        'Slap! E pronto, sua pulseira estará no seu pulso em um segundo! 🖐️',
+        '1',
+        '999.000',
+        './imgs/prizes/slap-bracelet.png',
+        'Pulseira Slap'
+    ],
+    [   
+        'Balance Labirinto',
+        'Ache o caminho neste pequeno labirinto super divertido.',
+        '1',
+        '999.000',
+        './imgs/prizes/labirinto.png',
+        'Labirintos'
+    ],
+    [   
+        'Apito',
+        'Piiii! Sopre o apito e deixe a festa começar! 🎶',
+        '1',
+        '999.000',
+        './imgs/prizes/apitos.png',
+        'Apitos Plásticos'
+    ],
+    [   
+        'Fidgets com Fricção',
+        'Puxe para trás estes fidgets e veja a velocidade — zoom, zoom! 🏎️',
+        '1',
+        '999.000',
+        './imgs/prizes/fidgets-fric.png',
+        'Carrinhos Fofinhos com Fricção'
+    ],        
+    [   
+        'Relógio de Brinquedo',
+        'Tique-taque, tique-taque, é hora de diverti-se com este relóginho de brinquedo! 🕰️',
+        '1',
+        '999.000',
+        './imgs/prizes/relogio-brinquedo.png',
+        'Relógio Plástico de Brinquedo'
+    ]
+                                                 
 
 ];
 
