@@ -33,7 +33,7 @@
             username_index = -1;
             const inputValue = document.getElementById('username').value;            
             for (let i = 0; i < student.length; i++) {
-                if (student[i][studentColUserName] == inputValue) {
+                if (student[i][studentColUserName].toLowerCase() == inputValue.toLowerCase()) {
                     username_index = i;
                     break;
                 }
