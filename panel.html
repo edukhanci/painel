@@ -245,6 +245,23 @@
     document.getElementById("tr-chamada-data-dummy").remove();
     document.getElementById("tr-chamada-status-dummy").remove();
 
+    //função que devolve a posição do estudante no ranking
+    function getPosRanking(uid) {
+        let buffer = [];
+        for (let i = 0; i < student.length; i++) {
+            student_score = getUserScore(i);
+            buffer.push([student_score, i]);
+        }
+        buffer.sort((a, b) => b[0] - a[0]); //poe em ordem decrescente de pontos
+        //recupera a posição do estudante pelo uid
+        for (let i = 0; i < buffer.length; i++) {
+            if (buffer[i][1] == uid) {
+                return i+1;
+            }
+        }
+        return 0; //nao achou ninguem com o uid informado
+    }
+
     //preenche a lista de estudantes
     for (let i = 0; i < student.length; i++) {   
         //preparando imagem do usuario 
@@ -306,7 +323,7 @@
         tdDiamonds.appendChild(tdDiamondsText);          
 
         //criando e anexando a posição no ranking geral
-        const rankingPos = 1;
+        const rankingPos = getPosRanking(i);
         const tdRankingPosText = document.createTextNode(rankingPos.toString());
         const tdRankingPos = document.createElement("td");     
         tdRankingPos.appendChild(tdRankingPosText);       
