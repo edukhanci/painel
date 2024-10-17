@@ -9,17 +9,33 @@ const itemAlt           = 5;
 /*export*/ const prizeItem = [
     [   
         'Bombom',
-        'Uma unidade de bombom.',
+        'Uma unidade de bombom. Delicie-se com cada pedacinho desse chocolate.',
+        '10',
+        '5.000',
+        './imgs/prizes/bombons.jpg',
+        'Bombons Sortidos de Chocolate'
+    ],    	
+    [   
+        'Pirulito',
+        'Uma unidade de pirulito. Doce magia para brincar e saborear em qualquer lugar.',
+        '10',
+        '2.000',
+        './imgs/prizes/lollipop-illustration.png',
+        'Pirulitos Sortidos'
+    ],    
+    [   
+        'Balinha',
+        'Uma unidade de balinha. Venha descobrir todos os sabores! Aventuras deliciosas em cada dentada, vamos lá!',
         '10',
         '1.000',
-        './imgs/prizes/bombons.jpg',
-        'Bombons Sortidos'
-    ],    
+        './imgs/prizes/candy-illustration.jpg',
+        'Balinhas Sortidas'
+    ],    	
     [   
         'Uno!',
         'Divirta-se com a sua turma! Uno é um jogo de cartas fácil de aprender e impossível de largar! 🃏',
         '3',
-        '500.000',
+        '180.000',
         './imgs/prizes/uno.png',
         'Uno'
     ],
@@ -27,7 +43,7 @@ const itemAlt           = 5;
         'Pulseira Pop Fidget Toy',
         'Alivie o estresse com a pulseira Pop Fidget Toy! Divertida, colorida e perfeita para todas as idades! 🌀',
         '12',
-        '1.000',
+        '100.000',
         './imgs/prizes/pop-bracelet.png',
         'Pop Bracelet Fidget Toy'
     ],    
@@ -35,7 +51,7 @@ const itemAlt           = 5;
         'Mini Mola Maluca',
         'Divirta-se com a Mola Maluca! Perfeita para criar brincadeiras incríveis e estimular a criatividade! 🌈✨',
         '12',
-        '1.000',
+        '50.000',
         './imgs/prizes/mola-maluca.png',
         'Pop Bracelet Fidget Toy'
     ],
@@ -43,7 +59,7 @@ const itemAlt           = 5;
         'Skate de dedo',
         'Desafie suas habilidades com um Skate de Dedo! Faça manobras incríveis e radicais! 🛹',
         '3',
-        '1.000',
+        '50.000',
         './imgs/prizes/skate-dedo.jpg',
         'Mini Skate'
     ],    
@@ -51,7 +67,7 @@ const itemAlt           = 5;
         'Pega mão',
         'Uma mãozinha super pegajosa capaz de agarrar em diversas superfícies.',
         '3',
-        '1.000',
+        '30.000',
         './imgs/prizes/pega-mao.png',
         'Mãozinha pegajosa'
     ],   
@@ -59,7 +75,7 @@ const itemAlt           = 5;
         'Jogo da memória eletrônico',
         'Com o Jogo da Memória a diversão está garantida! O objetivo do jogo é pensar rápido e conseguir repetir as sequências de som e luz.',
         '1',
-        '1.000',
+        '180.000',
         './imgs/prizes/memoria-eletronico.png',
         'Jogo da Memória'
     ], 
@@ -67,7 +83,7 @@ const itemAlt           = 5;
         'Lousa Mágica | TECJOE',
         'Com a capacidade de desenhar, escrever e apagar facilmente na tela, as crianças podem expressar sua criatividade e explorar diferentes conceitos da sua imaginação de forma interativa.',
         '1',
-        '999.000',
+        '200.000',
         './imgs/prizes/lousa-magica.png',
         'Lousa Mágica'
     ],
@@ -75,7 +91,7 @@ const itemAlt           = 5;
         'Cubos desafiadores | BONNYCO',
         'Cada cubo é um desafio diferente. Perfeito para estimular a mente e alegrar as festas.',
         '1',
-        '999.000',
+        '50.000',
         './imgs/prizes/cubes-puzzle.png',
         'Quebra-cabeça de Cubos'
     ],    
@@ -83,7 +99,7 @@ const itemAlt           = 5;
         'Fidgets | Giggle Zone',
         'Se você precisa de ajuda para manter o foco na escola, relaxar durante um intervalo ou pensar criativamente, este conjunto é para você! A caixa de fidgets da Giggle Zone contém vários brinquedos que estimulam a criatividade e combatem o stress.',
         '1',
-        '999.000',
+        '40.000',
         './imgs/prizes/fidget-box.png',
         'Box fidget deluxe'
     ],    
@@ -91,7 +107,7 @@ const itemAlt           = 5;
         'Comidinhas Mochi Squishies | Giggle Zone',
         'Fidgets extremamente agradáveis ao toque e proporcionam uma sensação calmante quando apertados ou amassados. Aliviam o estresse, a ansiedade e até podem ajudar na concentração.',
         '1',
-        '999.000',
+        '40.000',
         './imgs/prizes/fidget-mochi-squishies.png',
         'Fidget Mochi Squishies'
     ],       
@@ -99,7 +115,7 @@ const itemAlt           = 5;
         'Tela Mágica',
         'Desenhe seus sonhos com o Etch A Sketch! Gire, crie e apague para começar tudo de novo! 🎨✨',
         '2',
-        '999.000',
+        '150.000',
         './imgs/prizes/etch-a-sketch.png',
         'Tela Mágica Clássica'
     ],         
@@ -107,7 +123,7 @@ const itemAlt           = 5;
         'Bola Maluca | Puffer Ball',
         'Aperte, estique e brinque com essa bola super fofinha e colorida! 🌈🎉',
         '1',
-        '999.000',
+        '30.000',
         './imgs/prizes/puffer-balls.png',
         'Puffer Balls'
     ],
@@ -115,7 +131,7 @@ const itemAlt           = 5;
         'Lite-Brite',
         'Crie obras de arte brilhantes com o Lite-Brite! Deixe a sua imaginação iluminar! 🌟',
         '1',
-        '999.000',
+        '150.000',
         './imgs/prizes/lite-brite.jpg',
         'Lite-Brite'
     ],
@@ -123,7 +139,7 @@ const itemAlt           = 5;
         'Pop Tubes',
         '🌈 Estique, torça e conecte com os Pop Tubes! Diversão colorida e sem fim! 🎉',
         '12',
-        '999.000',
+        '40.000',
         './imgs/prizes/pop-tubes.png',
         'Pop Tubes'
     ],    
@@ -131,7 +147,7 @@ const itemAlt           = 5;
         'Good vibes charms',
         'Lindos pingentes coloridos para decoração, acompanhados por duas incríveis pulseiras! Encha de cores seus sapatos, bolsas, crocs e pulseiras! 🌈',
         '1',
-        '999.000',
+        '50.000',
         './imgs/prizes/good-vibes-charms.png',
         'Pingentes decorativos'
     ],
@@ -140,7 +156,7 @@ const itemAlt           = 5;
         'Pula Sapinho',
         'Pule, pule, sem parar, o sapinho vai te encantar! 🐸',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/pula-sapinho.png',
         'Sapinho de plástico'
     ],  
@@ -148,7 +164,7 @@ const itemAlt           = 5;
         'Bolinhas Gelatinosas',
         'Aperte e sinta a diversão. Estresse? Nem pensar!',
         '1',
-        '999.000',
+        '20.000',
         './imgs/prizes/bolas-gelatinosas.png',
         'Bolinhas gelatinosas antiestresse'
     ],
@@ -156,7 +172,7 @@ const itemAlt           = 5;
         'Lingua de Sogra',
         'Sopre e faça festa, com a língua mais divertida do mundo!',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/lingua-sogra.png',
         'Lingua de Sogra'
     ],
@@ -164,7 +180,7 @@ const itemAlt           = 5;
         'Spinner',
         'Gire e veja a mágica acontecendo. Diversão sem fim! 🌪️',
         '1',
-        '999.000',
+        '90.000',
         './imgs/prizes/spinner.png',
         'Spinner articulado'
     ],
@@ -172,7 +188,7 @@ const itemAlt           = 5;
         'Brinquedinho para o seu Pet',
         'Mime o seu pet com esses brinquedinhos super divertidos. Os gatinhos vão amar.',
         '1',
-        '999.000',
+        '20.000',
         './imgs/prizes/cat-toy-2.png',
         'Brinquedinho para Pets'
     ],
@@ -180,7 +196,7 @@ const itemAlt           = 5;
         'Quebra-Cabeça 3D',
         'Monte e desmonte! Este enigma em 3D é só para os corajosos! 🧩',
         '1',
-        '999.000',
+        '40.000',
         './imgs/prizes/3d-puzzles.png',
         'Quebra-Cabeça 3D'
     ],
@@ -188,7 +204,7 @@ const itemAlt           = 5;
         'Aneis de Neon Divertidos',
         'Brilhe como uma estrela com estes anéis super chamativos! ✨',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/neon-plastic-rings-2.png',
         'Aneis Plásticos de Neon'
     ],
@@ -196,7 +212,7 @@ const itemAlt           = 5;
         'Pulseira Slap',
         'Slap! E pronto, sua pulseira estará no seu pulso em um segundo! 🖐️',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/slap-bracelet.png',
         'Pulseira Slap'
     ],
@@ -204,7 +220,7 @@ const itemAlt           = 5;
         'Balance Labirinto',
         'Ache o caminho neste pequeno labirinto super divertido.',
         '1',
-        '999.000',
+        '10.000',
         './imgs/prizes/labirinto.png',
         'Labirintos'
     ],
@@ -212,7 +228,7 @@ const itemAlt           = 5;
         'Apito',
         'Piiii! Sopre o apito e deixe a festa começar! 🎶',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/apitos.png',
         'Apitos Plásticos'
     ],
@@ -220,7 +236,7 @@ const itemAlt           = 5;
         'Fidgets com Fricção',
         'Puxe para trás estes fidgets e veja a velocidade — zoom, zoom! 🏎️',
         '1',
-        '999.000',
+        '30.000',
         './imgs/prizes/fidgets-fric.png',
         'Carrinhos Fofinhos com Fricção'
     ],        
@@ -228,7 +244,7 @@ const itemAlt           = 5;
         'Relógio de Brinquedo',
         'Tique-taque, tique-taque, é hora de diverti-se com este relóginho de brinquedo! 🕰️',
         '1',
-        '999.000',
+        '1.000',
         './imgs/prizes/relogio-brinquedo.png',
         'Relógio Plástico de Brinquedo'
     ]
