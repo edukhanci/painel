@@ -19,7 +19,7 @@ const itemAlt           = 5;
         'Pirulito',
         'Uma unidade de pirulito. Doce magia para brincar e saborear em qualquer lugar.',
         '10',
-        '2.000',
+        '3.000',
         './imgs/prizes/lollipop-illustration.png',
         'Pirulitos Sortidos'
     ],    
@@ -83,7 +83,7 @@ const itemAlt           = 5;
         'Lousa Mágica | TECJOE',
         'Com a capacidade de desenhar, escrever e apagar facilmente na tela, as crianças podem expressar sua criatividade e explorar diferentes conceitos da sua imaginação de forma interativa.',
         '1',
-        '200.000',
+        '170.000',
         './imgs/prizes/lousa-magica.png',
         'Lousa Mágica'
     ],
