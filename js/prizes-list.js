@@ -51,7 +51,7 @@ const itemAlt           = 5;
         'Mini Mola Maluca',
         'Divirta-se com a Mola Maluca! Perfeita para criar brincadeiras incríveis e estimular a criatividade! 🌈✨',
         '12',
-        '50.000',
+        '20.000',
         './imgs/prizes/mola-maluca.png',
         'Pop Bracelet Fidget Toy'
     ],
@@ -59,7 +59,7 @@ const itemAlt           = 5;
         'Skate de dedo',
         'Desafie suas habilidades com um Skate de Dedo! Faça manobras incríveis e radicais! 🛹',
         '3',
-        '50.000',
+        '20.000',
         './imgs/prizes/skate-dedo.jpg',
         'Mini Skate'
     ],    
@@ -67,7 +67,7 @@ const itemAlt           = 5;
         'Pega mão',
         'Uma mãozinha super pegajosa capaz de agarrar em diversas superfícies.',
         '3',
-        '30.000',
+        '10.000',
         './imgs/prizes/pega-mao.png',
         'Mãozinha pegajosa'
     ],   
@@ -75,7 +75,7 @@ const itemAlt           = 5;
         'Jogo da memória eletrônico',
         'Com o Jogo da Memória a diversão está garantida! O objetivo do jogo é pensar rápido e conseguir repetir as sequências de som e luz.',
         '1',
-        '180.000',
+        '150.000',
         './imgs/prizes/memoria-eletronico.png',
         'Jogo da Memória'
     ], 
@@ -115,7 +115,7 @@ const itemAlt           = 5;
         'Tela Mágica',
         'Desenhe seus sonhos com o Etch A Sketch! Gire, crie e apague para começar tudo de novo! 🎨✨',
         '2',
-        '150.000',
+        '140.000',
         './imgs/prizes/etch-a-sketch.png',
         'Tela Mágica Clássica'
     ],         
@@ -123,7 +123,7 @@ const itemAlt           = 5;
         'Bola Maluca | Puffer Ball',
         'Aperte, estique e brinque com essa bola super fofinha e colorida! 🌈🎉',
         '1',
-        '30.000',
+        '20.000',
         './imgs/prizes/puffer-balls.png',
         'Puffer Balls'
     ],
@@ -131,7 +131,7 @@ const itemAlt           = 5;
         'Lite-Brite',
         'Crie obras de arte brilhantes com o Lite-Brite! Deixe a sua imaginação iluminar! 🌟',
         '1',
-        '150.000',
+        '100.000',
         './imgs/prizes/lite-brite.jpg',
         'Lite-Brite'
     ],
@@ -139,7 +139,7 @@ const itemAlt           = 5;
         'Pop Tubes',
         '🌈 Estique, torça e conecte com os Pop Tubes! Diversão colorida e sem fim! 🎉',
         '12',
-        '40.000',
+        '30.000',
         './imgs/prizes/pop-tubes.png',
         'Pop Tubes'
     ],    
@@ -180,7 +180,7 @@ const itemAlt           = 5;
         'Spinner',
         'Gire e veja a mágica acontecendo. Diversão sem fim! 🌪️',
         '1',
-        '90.000',
+        '80.000',
         './imgs/prizes/spinner.png',
         'Spinner articulado'
     ],
@@ -196,7 +196,7 @@ const itemAlt           = 5;
         'Quebra-Cabeça 3D',
         'Monte e desmonte! Este enigma em 3D é só para os corajosos! 🧩',
         '1',
-        '40.000',
+        '30.000',
         './imgs/prizes/3d-puzzles.png',
         'Quebra-Cabeça 3D'
     ],
