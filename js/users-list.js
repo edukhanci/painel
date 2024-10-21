@@ -73,7 +73,7 @@ const student = [
 		//bonus -> data, pontos, motivo, responsavel
 		[ ],
 		//onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel
-		[ ['2024-10-17', 'Silvio', '100000', 'Resgate de um Lite-Brite'] ],
+		[ ['2024-10-17', 100000, 'Resgate de um Lite-Brite', 'Silvio'] ],
 		//icone do usuario
 		'https://cdn.kastatic.org/images/avatars/svg/blobby-green.svg',
 		//presença -> dia, presente:1/faltou:0
@@ -185,7 +185,7 @@ const student = [
 		//bonus -> data, pontos, motivo, responsavel
 		[ ],
 		//onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel
-		[ ['2024-10-17', 'Silvio', '10000', 'Resgate de um pega mão'] ],
+		[ ['2024-10-17', 10000, 'Resgate de um pega mão', 'Silvio'] ],
 		//icone do usuario
 		'https://cdn.kastatic.org/images/avatars/svg/blobby-green.svg',
 		//presença -> dia, presente:1/faltou:0
@@ -201,7 +201,7 @@ const student = [
 		//bonus -> data, pontos, motivo, responsavel
 		[ ],
 		//onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel
-		[ ['2024-10-17', 'Silvio', '20000', 'Resgate de uma mini mola maluca'] ],
+		[ ['2024-10-17', 20000, 'Resgate de uma mini mola maluca', 'Silvio'] ],
 		//icone do usuario
 		'https://cdn.kastatic.org/images/avatars/svg/piceratops-seed.svg',
 		//presença -> dia, presente:1/faltou:0
