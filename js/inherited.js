@@ -277,6 +277,30 @@ function getGraphXLabel(element_col) {
 
 
 
+const containerLinksExternos = document.createElement("div");
+containerLinksExternos.style = 'display: flex; flex-direction: column; justify-content: left; align-items: flex-start;';
+
+const   elementExternoUrl = document.createElement("a");
+elementExternoUrl.href = 'https://pt.khanacademy.org/login';
+const   elementExternoUrlText = document.createTextNode('Khan Academy');
+elementExternoUrl.appendChild(elementExternoUrlText);
+
+const tituloLinksExternos = document.createElement("p");
+const tituloLinksExternosText = document.createTextNode('Links Externos:');
+tituloLinksExternos.appendChild(tituloLinksExternosText);
+tituloLinksExternos.style = 'margin-top: 10px; margin-bottom: 4px;'
+
+containerLinksExternos.appendChild(tituloLinksExternos);
+containerLinksExternos.appendChild(elementExternoUrl);
+
+const TagBRLinksExternos = document.createElement("br");
+containerLinksExternos.appendChild(TagBRLinksExternos);
+
+document.querySelector('.user-info').appendChild(containerLinksExternos);
+
+
+
+
 const containerMaterialApoio = document.createElement("div");
 containerMaterialApoio.style = 'display: flex; flex-direction: column; justify-content: left; align-items: flex-start;';
 
