@@ -43,7 +43,7 @@ const itemAlt           = 5;
         'Pulseira Pop Fidget Toy',
         'Alivie o estresse com a pulseira Pop Fidget Toy! Divertida, colorida e perfeita para todas as idades! 🌀',
         '12',
-        '100.000',
+        '40.000',
         './imgs/prizes/pop-bracelet.png',
         'Pop Bracelet Fidget Toy'
     ],    
@@ -99,7 +99,7 @@ const itemAlt           = 5;
         'Fidgets | Giggle Zone',
         'Se você precisa de ajuda para manter o foco na escola, relaxar durante um intervalo ou pensar criativamente, este conjunto é para você! A caixa de fidgets da Giggle Zone contém vários brinquedos que estimulam a criatividade e combatem o stress.',
         '1',
-        '40.000',
+        '20.000',
         './imgs/prizes/fidget-box.png',
         'Box fidget deluxe'
     ],    
@@ -107,7 +107,7 @@ const itemAlt           = 5;
         'Comidinhas Mochi Squishies | Giggle Zone',
         'Fidgets extremamente agradáveis ao toque e proporcionam uma sensação calmante quando apertados ou amassados. Aliviam o estresse, a ansiedade e até podem ajudar na concentração.',
         '1',
-        '40.000',
+        '20.000',
         './imgs/prizes/fidget-mochi-squishies.png',
         'Fidget Mochi Squishies'
     ],       
@@ -139,7 +139,7 @@ const itemAlt           = 5;
         'Pop Tubes',
         '🌈 Estique, torça e conecte com os Pop Tubes! Diversão colorida e sem fim! 🎉',
         '12',
-        '30.000',
+        '20.000',
         './imgs/prizes/pop-tubes.png',
         'Pop Tubes'
     ],    
