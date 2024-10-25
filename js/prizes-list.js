@@ -5,6 +5,7 @@ const itemQuantity      = 2;
 const itemPoints        = 3;
 const itemSrc           = 4;
 const itemAlt           = 5;
+const itemStreak        = 6;
 */
 /*export*/ const prizeItem = [
     [   
