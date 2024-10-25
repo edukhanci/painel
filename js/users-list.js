@@ -71,7 +71,7 @@ const student = [
 		//evolução da pontuação
 		[ ['2024-09-26', 94007], ['2024-10-01', 97842], ['2024-10-03', 100407], ['2024-10-08', 101588], ['2024-10-10', 103073], ['2024-10-17', 134708], ['2024-10-22', 136743], ['2024-10-24', 138083] ],
 		//bonus -> data, pontos, motivo, responsavel
-		[ ],
+		[['2024-10-25', 1917, 'Atividades extras de Português', 'Silvio'] ],
 		//onus (resgate de prêmio) -> data, pontos, descricao-premio, responsavel
 		[ ['2024-10-17', 100000, 'Resgate de um Lite-Brite', 'Silvio'], ['2024-10-22', 20000, 'Resgate de uma bola maluca (puffer ball)', 'Silvio'], ['2024-10-24', 20000, 'Resgate de um Fidgets | Giggle Zone', 'Silvio'] ],
 		//icone do usuario
