@@ -13,7 +13,8 @@ const itemAlt           = 5;
         '10',
         '5.000',
         './imgs/prizes/bombons.jpg',
-        'Bombons Sortidos de Chocolate'
+        'Bombons Sortidos de Chocolate',
+        '0'
     ],    	
     [   
         'Pirulito',
@@ -21,7 +22,8 @@ const itemAlt           = 5;
         '10',
         '3.000',
         './imgs/prizes/lollipop-illustration.png',
-        'Pirulitos Sortidos'
+        'Pirulitos Sortidos',
+        '0'
     ],    
     [   
         'Balinha',
@@ -29,7 +31,8 @@ const itemAlt           = 5;
         '10',
         '1.000',
         './imgs/prizes/candy-illustration.jpg',
-        'Balinhas Sortidas'
+        'Balinhas Sortidas',
+        '0'
     ],    	
     [   
         'Uno!',
@@ -37,7 +40,8 @@ const itemAlt           = 5;
         '3',
         '180.000',
         './imgs/prizes/uno.png',
-        'Uno'
+        'Uno',
+        '5'
     ],
     [   
         'Pulseira Pop Fidget Toy',
@@ -45,7 +49,8 @@ const itemAlt           = 5;
         '12',
         '40.000',
         './imgs/prizes/pop-bracelet.png',
-        'Pop Bracelet Fidget Toy'
+        'Pop Bracelet Fidget Toy',
+        '0'
     ],    
     [   
         'Mini Mola Maluca',
@@ -53,7 +58,8 @@ const itemAlt           = 5;
         '12',
         '20.000',
         './imgs/prizes/mola-maluca.png',
-        'Pop Bracelet Fidget Toy'
+        'Pop Bracelet Fidget Toy',
+        '0'
     ],
     [   
         'Skate de dedo',
@@ -61,7 +67,8 @@ const itemAlt           = 5;
         '3',
         '20.000',
         './imgs/prizes/skate-dedo.jpg',
-        'Mini Skate'
+        'Mini Skate',
+        '0'
     ],    
     [   
         'Pega mão',
@@ -69,7 +76,8 @@ const itemAlt           = 5;
         '3',
         '10.000',
         './imgs/prizes/pega-mao.png',
-        'Mãozinha pegajosa'
+        'Mãozinha pegajosa',
+        '0'
     ],   
     [   
         'Jogo da memória eletrônico',
@@ -77,7 +85,8 @@ const itemAlt           = 5;
         '1',
         '150.000',
         './imgs/prizes/memoria-eletronico.png',
-        'Jogo da Memória'
+        'Jogo da Memória',
+        '5'
     ], 
     [   
         'Lousa Mágica | TECJOE',
@@ -85,7 +94,8 @@ const itemAlt           = 5;
         '1',
         '170.000',
         './imgs/prizes/lousa-magica.png',
-        'Lousa Mágica'
+        'Lousa Mágica',
+        '5'
     ],
     [   
         'Cubos desafiadores | BONNYCO',
@@ -93,7 +103,8 @@ const itemAlt           = 5;
         '1',
         '50.000',
         './imgs/prizes/cubes-puzzle.png',
-        'Quebra-cabeça de Cubos'
+        'Quebra-cabeça de Cubos',
+        '4'
     ],    
     [   
         'Fidgets | Giggle Zone',
@@ -101,7 +112,8 @@ const itemAlt           = 5;
         '1',
         '20.000',
         './imgs/prizes/fidget-box.png',
-        'Box fidget deluxe'
+        'Box fidget deluxe',
+        '0'
     ],    
     [   
         'Comidinhas Mochi Squishies | Giggle Zone',
@@ -109,7 +121,8 @@ const itemAlt           = 5;
         '1',
         '20.000',
         './imgs/prizes/fidget-mochi-squishies.png',
-        'Fidget Mochi Squishies'
+        'Fidget Mochi Squishies',
+        '0'
     ],       
     [   
         'Tela Mágica',
@@ -117,7 +130,8 @@ const itemAlt           = 5;
         '2',
         '140.000',
         './imgs/prizes/etch-a-sketch.png',
-        'Tela Mágica Clássica'
+        'Tela Mágica Clássica',
+        '4'
     ],         
     [   
         'Bola Maluca | Puffer Ball',
@@ -125,7 +139,8 @@ const itemAlt           = 5;
         '1',
         '20.000',
         './imgs/prizes/puffer-balls.png',
-        'Puffer Balls'
+        'Puffer Balls',
+        '0'
     ],
     [   
         'Lite-Brite',
@@ -133,7 +148,8 @@ const itemAlt           = 5;
         '1',
         '100.000',
         './imgs/prizes/lite-brite.jpg',
-        'Lite-Brite'
+        'Lite-Brite',
+        '4'
     ],
     [   
         'Pop Tubes',
@@ -141,7 +157,8 @@ const itemAlt           = 5;
         '12',
         '20.000',
         './imgs/prizes/pop-tubes.png',
-        'Pop Tubes'
+        'Pop Tubes',
+        '0'
     ],    
     [   
         'Good vibes charms',
@@ -149,7 +166,8 @@ const itemAlt           = 5;
         '1',
         '50.000',
         './imgs/prizes/good-vibes-charms.png',
-        'Pingentes decorativos'
+        'Pingentes decorativos',
+        '0'
     ],
     //-------------------
     [   
@@ -158,7 +176,8 @@ const itemAlt           = 5;
         '1',
         '1.000',
         './imgs/prizes/pula-sapinho.png',
-        'Sapinho de plástico'
+        'Sapinho de plástico',
+        '0'
     ],  
     [   
         'Bolinhas Gelatinosas',
@@ -166,7 +185,8 @@ const itemAlt           = 5;
         '1',
         '20.000',
         './imgs/prizes/bolas-gelatinosas.png',
-        'Bolinhas gelatinosas antiestresse'
+        'Bolinhas gelatinosas antiestresse',
+        '0'
     ],
     [   
         'Lingua de Sogra',
@@ -174,7 +194,8 @@ const itemAlt           = 5;
         '1',
         '1.000',
         './imgs/prizes/lingua-sogra.png',
-        'Lingua de Sogra'
+        'Lingua de Sogra',
+        '0'
     ],
     [   
         'Spinner',
@@ -182,7 +203,8 @@ const itemAlt           = 5;
         '1',
         '80.000',
         './imgs/prizes/spinner.png',
-        'Spinner articulado'
+        'Spinner articulado',
+        '4'
     ],
     [   
         'Brinquedinho para o seu Pet',
@@ -190,7 +212,8 @@ const itemAlt           = 5;
         '1',
         '20.000',
         './imgs/prizes/cat-toy-2.png',
-        'Brinquedinho para Pets'
+        'Brinquedinho para Pets',
+        '0'
     ],
     [   
         'Quebra-Cabeça 3D',
@@ -198,7 +221,8 @@ const itemAlt           = 5;
         '1',
         '30.000',
         './imgs/prizes/3d-puzzles.png',
-        'Quebra-Cabeça 3D'
+        'Quebra-Cabeça 3D',
+        '0'
     ],
     [   
         'Aneis de Neon Divertidos',
@@ -206,8 +230,10 @@ const itemAlt           = 5;
         '1',
         '1.000',
         './imgs/prizes/neon-plastic-rings-2.png',
-        'Aneis Plásticos de Neon'
+        'Aneis Plásticos de Neon',
+        '0'
     ],
+    /*
     [   
         'Pulseira Slap',
         'Slap! E pronto, sua pulseira estará no seu pulso em um segundo! 🖐️',
@@ -216,13 +242,15 @@ const itemAlt           = 5;
         './imgs/prizes/slap-bracelet.png',
         'Pulseira Slap'
     ],
+    */
     [   
         'Balance Labirinto',
         'Ache o caminho neste pequeno labirinto super divertido.',
         '1',
         '10.000',
         './imgs/prizes/labirinto.png',
-        'Labirintos'
+        'Labirintos',
+        '0'
     ],
     [   
         'Apito',
@@ -230,7 +258,8 @@ const itemAlt           = 5;
         '1',
         '1.000',
         './imgs/prizes/apitos.png',
-        'Apitos Plásticos'
+        'Apitos Plásticos',
+        '0'
     ],
     [   
         'Fidgets com Fricção',
@@ -238,7 +267,8 @@ const itemAlt           = 5;
         '1',
         '30.000',
         './imgs/prizes/fidgets-fric.png',
-        'Carrinhos Fofinhos com Fricção'
+        'Carrinhos Fofinhos com Fricção',
+        '0'
     ],        
     [   
         'Relógio de Brinquedo',
@@ -246,7 +276,8 @@ const itemAlt           = 5;
         '1',
         '1.000',
         './imgs/prizes/relogio-brinquedo.png',
-        'Relógio Plástico de Brinquedo'
+        'Relógio Plástico de Brinquedo',
+        '0'
     ]
                                                  
 
