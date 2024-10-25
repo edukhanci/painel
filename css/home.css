@@ -197,8 +197,7 @@ body {
     margin-bottom: 5px;
 }
 .prize-points {
-    font-weight: bold;
-    color: rgb(57, 155, 223); /*#4CAF50;*/
+    font-weight: bold;    
 }
 .ranking-list {
     list-style-type: none;
@@ -269,6 +268,13 @@ body {
 }
 .static-lightning {
     margin-right: 5px;
+    display: inline;
+    color: rgb(57, 155, 223);
+}
+.static-streak {
+    margin-right: 5px;
+    display: inline;
+    color: rgb(223, 110, 57);
 }
 .calendar-nav {
     display: flex;
