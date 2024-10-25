@@ -88,17 +88,28 @@ for (let i = 0; i < prizeItem.length; i++) {
         prizeItemQuantity.appendChild(prizeItemQuantityText);              
     const prizeItemPoints = document.createElement("p");
         prizeItemPoints.className = 'prize-points';   
-    const prizeItemBolt = document.createElement("span");    
-        prizeItemBolt.className = 'static-lightning';
+    const prizeSpanItemBolt = document.createElement("span");    
+        prizeSpanItemBolt.className = 'static-lightning';
         const prizeItemBoltText = document.createTextNode('💎 ');
         const prizeItemPointsText = document.createTextNode(prizeItem[i][itemPoints]+' ');//pontos
-        prizeItemPoints.appendChild(prizeItemBoltText);
-        prizeItemPoints.appendChild(prizeItemPointsText);
+        prizeSpanItemBolt.appendChild(prizeItemBoltText);
+        prizeSpanItemBolt.appendChild(prizeItemPointsText);
+        prizeItemPoints.appendChild(prizeSpanItemBolt);
+
+    if (prizeItem[i][itemStreak] > 0) {
+        const prizeSpanItemFlame = document.createElement("span");    
+            prizeSpanItemFlame.className = 'static-streak';
+            const prizeItemBoltFlameText = document.createTextNode(' 🔥 ');
+            const prizeItemFlameText = document.createTextNode(prizeItem[i][itemStreak]+' ');//pontos de ofensiva
+            prizeSpanItemFlame.appendChild(prizeItemBoltFlameText);
+            prizeSpanItemFlame.appendChild(prizeItemFlameText);
+            prizeItemPoints.appendChild(prizeSpanItemFlame);
+    }    
 
     prizeItemInfo.appendChild(prizeItemName);
     prizeItemInfo.appendChild(prizeItemDescription);
     prizeItemInfo.appendChild(prizeItemQuantity);
-    prizeItemInfo.appendChild(prizeItemPoints);
+    prizeItemInfo.appendChild(prizeItemPoints);    
     prizeItemContainer.appendChild(prizeItemImg);
     prizeItemContainer.appendChild(prizeItemInfo);
 
@@ -206,9 +217,10 @@ let progresso_col = [
 let score_index = user_perfil.score.length-1;
 for (let i = progresso_col.length-1; i > -1 ; i--) {
     if (score_index > -1) {
+        //console.log(user_perfil.score[score_index][scDate]);
         const pcDate = new Date(user_perfil.score[score_index][scDate]); 
-        progresso_col[i][pcMonth] = pcDate.getMonth()+1;
-        progresso_col[i][pcDay]   = pcDate.getDate();
+        progresso_col[i][pcMonth] = pcDate.getUTCMonth()+1;
+        progresso_col[i][pcDay]   = pcDate.getUTCDate();
         progresso_col[i][pcScore] = user_perfil.score[score_index][scScore];
         score_index--;
     } else {
